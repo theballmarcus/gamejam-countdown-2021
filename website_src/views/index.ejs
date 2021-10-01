@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>!-->
+    <script src="/javascripts/jquery.min.js"></script>
+    <script src="/javascripts/save.js"></script>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <nav>
+      <p class="inline">Save password </p><input type="text" id="password"></input>
+    </nav>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <div id="saveNav">
+      <p class="inline" id="name">Name </p><input type="text" id="inputName"></input><br>
+      <p class="inline" id="note">Note </p><input type="text" id="inputNote"></input>
+      <button type="submit" onclick="save()">Submit</button>
+
+      <pre id="recieved_server"></pre>
+      <p id="recieved"></p>
+    </div>
+  </body>
+</html>
