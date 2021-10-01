@@ -1,4 +1,8 @@
-# GameJam Countdown 2021
+# GameJam 2021 Countdown
+README FILE STUFF HERE
 
-Theballmarcus: https://github.com/Theballmarcus
-Rumrobot: https://github.com/Rumrobot
+
+
+Contributers:
+  - [TheBallMarcus](https://github.com/Theballmarcus)
+  - [Rumrobot](https://github.com/Rumrobot)

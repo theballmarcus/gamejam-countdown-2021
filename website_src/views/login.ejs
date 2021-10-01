@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="/javascripts/jquery.min.js"></script>
+    <script src="/javascripts/login.js"></script>
+    <script> //NEED URL DECODING
+        function saveServerVar(e) {
+            return decodeURI(e)
+            
+        }
+        session = saveServerVar('<%= session %>')
+        console.log(session)
+    </script>
+</head>
+<body>
+    <script>
+        $(document).ready(function() {
+            $.ajax({
+                type: 'POST',
+                url: '/admin',
+                dataType: "json",
+                async:false,
+                data: {
+                    session: session
+                },
+                success: function(data) {
+                    console.log(data);
+                    var city = ('#city');
+                    $(city).empty();
+                    for (var i = 0; i < data.length; i++) {
+                        $(city).append('<option id=' + data[i].sysid + ' value=' + data[i].city_name + '>' + data[i].city_name + '</option>');
+
+                    }
+                }
+
+            });
+        });
+    </script>
+    <h1>jdsaij</h1>
+
+</body>
+</html>
