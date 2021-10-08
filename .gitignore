@@ -119,3 +119,5 @@ dist
 
 
 **node_modules
+website_src/config.json
+data/gamejam_countdown.db

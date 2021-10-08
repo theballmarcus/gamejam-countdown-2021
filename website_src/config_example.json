@@ -1,3 +1,5 @@
 { 
-    "admin_pass" : "1234"
+    "admin_pass" : "1234",
+    "port" : 1337,
+    "secret" : "put in a secret my man"
 }

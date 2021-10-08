@@ -1,32 +1,32 @@
 var sqlite3 = require('sqlite3').verbose();
 
 module.exports.db = {
-    open_conn : function(db_location) {
-        var db = new sqlite3.Database('./data/notes.db')
-        return db
+    open_conn : function(db_location, callback) {
+        var db = new sqlite3.Database(db_location)
+        callback(db)
     },
-    close_conn : function(db) {
+    close_conn : function(db, callback) {
       db.close()
+      if (typeof callback === 'function') callback()
     }, 
-    query : function (db, command) {
+    query : function (db, command, callback) {
       db.serialize(function() {
-        db.each(command, function(err, row) {
-          console.log(row.id + ":" + row.name)
+        db.all(command, function(err, rows) {
+          if(err) {callback(rows,err);console.log(err); return;}
+          callback(rows)
         })
       })
     },
-    write : function (db_location, command) {
-      var db = new sqlite3.Database(db_location)
+    write : function (db, command, callback) {
       db.serialize(function() {
         db.run(command, function(err) {
           if (err) {
-            return console.log(err.message);
+            callback(err)
+          } else {
+            callback()
           }
-          // get the last insert id
-          console.log(`A row has been inserted with rowid ${this.lastID}`);
         })
       })
-      db.close()
     }
 }
 

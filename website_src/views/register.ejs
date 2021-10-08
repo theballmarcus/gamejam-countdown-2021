@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Register</title>
     <script src="/javascripts/jquery.min.js"></script>
-    <script src="/javascripts/login.js"></script>
-    <link rel="stylesheet" href="stylesheets/login.css">
+    <script src="/javascripts/register.js"></script>
+    <link rel="stylesheet" href="stylesheets/register.css">
     <script> //NEED URL DECODING
         function saveServerVar(e) {
             return decodeURI(e)
@@ -17,15 +17,16 @@
 </head>
 <body style="background-color: darkgreen;">
     <h1><%= message %></h1>
-    <nav id="login-main">
-        <div class="login-form">
-            <h1>Login here</h1>
-			<form action="login" method="POST">
+    <nav id="register-main">
+        <div class="register-form">
+            <h1>Register here</h1>
+			<form action="register" method="POST">
 				<input type="text" name="username" placeholder="Username" required>
 				<input type="password" name="password" placeholder="Password" required>
+                <input type="password" name="confirm_pass" placeholder="Password" required>
 				<input type="submit" value="Submit here">
 			</form>
-            <p>Haven't got your password yet? <a href="/register">Click here!</a></p>
+            <p>Already have an account? <a href="/login">Click here!</a></p>
         </div>
     </nav>
 </body>
