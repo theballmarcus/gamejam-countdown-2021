@@ -22,7 +22,7 @@ router.post('/', function(req, res, next) {
 	var hashed_password = crypto.createHash('md5').update(req.body.password).digest("hex");
 
 	if (username && password) {
-		sqlite.query(db, `SELECT * FROM accounts WHERE name = "${username}" AND pass_hash = "${hashed_password}"`, function(rows, error) {
+		sqlite.query(db, `SELECT * FROM accounts WHERE name = ? AND pass_hash = ?`, [username, hashed_password],function(rows, error) {
 			console.log(rows)
 			if (rows.length === 1) {
 				req.session.loggedin = true;

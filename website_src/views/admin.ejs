@@ -11,10 +11,12 @@
   </head>
   <body>
     <h1>YOU HAVE REACHED ADMIN SITE... Click <a href="/home?admin=0">here</a> to go to normal site.</a></h1>
-    <select onchange="createTable()" id="mode-database">
+    <p>Remove accounts with id: </p><input id="removeAccount" type="text" value="0"><br>
+    <select onchange="modeChanged()" id="mode-database">
       <option>All accounts</option> <!-- selectedindex 0-->
       <option>Accepted accounts</option> <!-- selectedindex 1-->
-    </select>
+      <option>Groups data</option> <!-- selectedindex 0-->
+    </select><br>
     <div id="database-inventory" class=""></div>
     <script src="/javascripts/admin.js"></script>
 

@@ -24,7 +24,7 @@ router.post('/', function(req, res, next) {
             return;
           }
           hashed_password = crypto.createHash('md5').update(req.body.password).digest("hex");
-          sqlite.write(db, `INSERT INTO accounts (name,pass_hash,priviliges,accepted) VALUES("${req.body.username}","${hashed_password}",1,0)`, function(err) {
+          sqlite.write(db, `INSERT INTO accounts (name,pass_hash,priviliges,accepted) VALUES(?, ?,1,0)`, [req.body.username, hashed_password], function(err) {
             if(err) {
               res.render('register', { status: 0, message : "Failed! Username is already taken" }); 
               return;

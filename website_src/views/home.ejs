@@ -9,7 +9,11 @@
 <body>
     <h1>You have logged in as <%= username %>.</h1>
     <h1>Accepted: <%= accepted %>.</h1>
-    <h1>Priviliges: <%= priviliges %>.</h1>
     <h1>Click <a href="/logout">here</a> to logout</h1>
+    <form action="home" method="POST">
+        <input type="text" name="motto_title" placeholder="Whats would you like to call you motto?" required>
+        <input type="text" name="motto" placeholder="Whats your motto?" required>
+        <input type="submit" value="Submit here">
+    </form>
 </body>
 </html>
