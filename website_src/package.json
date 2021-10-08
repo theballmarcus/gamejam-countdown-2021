@@ -9,13 +9,15 @@
     "body-parser": "^1.19.0",
     "cookie-parser": "~1.4.4",
     "cors": "^2.8.5",
+    "crypto-js": "^4.1.1",
     "debug": "~2.6.9",
     "ejs": "~2.6.1",
     "express": "~4.16.1",
     "express-fileupload": "^1.2.1",
+    "express-session": "^1.17.2",
     "http-errors": "~1.6.3",
     "lodash": "^4.17.21",
     "morgan": "~1.9.1",
-    "sqlite3": "^5.0.2"
+    "sqlite3": "^4.2.0"
   }
 }

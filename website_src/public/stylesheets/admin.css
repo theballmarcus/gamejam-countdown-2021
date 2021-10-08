@@ -1,0 +1,121 @@
+.database_text {
+    border-width: 0px;
+}
+body {font-family: Arial;}
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+  display: inline-block;
+}
+.tab button p {
+    display: inline-block;
+    height: 0px;
+    margin: 0;
+    padding: 0;
+}
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+#individualTable, td, th {
+   border: 1px solid black;
+}
+#individualTable {
+    /*width: 100%;*/
+    border-collapse: collapse;
+}
+
+#databaseContent {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+}
+
+#databaseContent td, #databaseContent th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#databaseContent tr:nth-child(even){background-color: #f2f2f2;}
+
+#databaseContent tr:hover {background-color: #ddd;}
+
+#databaseContent th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #313131;
+    color: white;
+}
+
+#singleTable {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#singleTable td, #singleTable th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#singleTable tr:nth-child(even){background-color: #f2f2f2;}
+
+#singleTable tr:hover {background-color: #ddd;}
+
+#singleTable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #313131;
+    color: white;
+}
+
+.flex-content {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+.flex-content > div {
+    margin: 10px;
+}
+
+#instrumentsDiv {
+    margin-left: auto;
+    align-self: flex-end;
+    float: right;
+}
+#instrumentsCom {
+  
+}
+
+.instrumentLabel {
+    display: inline;
+    margin: 10px;
+}
