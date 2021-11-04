@@ -46,7 +46,7 @@ function draw_timer() {
     ctx.fill()
     ctx.fillStyle='red';
     ctx.textAlign = "center"; 
-    ctx.fillText("Time until GAMEJAM:", c.width / 2, (c.height / 2) - 80); 
+    ctx.fillText("GameJam 2021 ends in:", c.width / 2, (c.height / 2) - 80); 
     ctx.fillStyle='hsl('+hue+',100%,50%)';
     ctx.textAlign = "center"
     ctx.font = "80px Squealer";

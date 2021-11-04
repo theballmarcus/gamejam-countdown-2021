@@ -5,7 +5,7 @@ module.exports.routers = {
         logout : require('./routes/logout'),
         register : require('./routes/register'),
         home : require('./routes/home'),
-        admin : require('./routes/admin')
+        admin : require('./routes/admin'),
     },
     use : {
         index : "/",

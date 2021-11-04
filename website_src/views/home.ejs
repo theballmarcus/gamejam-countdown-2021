@@ -5,15 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link rel='stylesheet' href='/stylesheets/home.css' />
+    <script src="/javascripts/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fruktur&display=swap" rel="stylesheet"> 
+    
+    <script> // SCRIPT FOR PARSING VARIABLES
+        var count_date = "<%= count_date %>"
+        var username = "<%= username %>"
+      </script>
 </head>
 <body>
-    <h1>You have logged in as <%= username %>.</h1>
-    <h1>Accepted: <%= accepted %>.</h1>
-    <h1>Click <a href="/logout">here</a> to logout</h1>
-    <form action="home" method="POST">
-        <input type="text" name="motto_title" placeholder="Whats would you like to call you motto?" required>
-        <input type="text" name="motto" placeholder="Whats your motto?" required>
-        <input type="submit" value="Submit here">
-    </form>
+    <canvas id="myCanvas"></canvas>
+    <script src="/javascripts/home-canvas.js"></script>
+    <nav id="register-main">
+        <div class="register-form">
+            <h1>Type in your motto here.</h1>
+			<form action="home" method="POST">
+				<input type="text" name="motto_title" placeholder="Whats would you like to call you motto?" required>
+				<input type="text" name="motto" placeholder="Whats your motto?" required>
+				<input type="submit" value="Submit here">
+			</form>
+            <p>Want to logout? <a href="/logout">Click here!</a></p>
+        </div>
+    </nav>
 </body>
 </html>

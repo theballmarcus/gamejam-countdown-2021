@@ -7,8 +7,8 @@ var session = require('express-session');
 var bodyParser = require('body-parser');
 var routers = require('./routers.js').routers;
 var config = require('./config.json')
-
 var app = express();
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -32,7 +32,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 for(i in routers.use) {
   app.use(routers.use[i], routers.require[i])
 }
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
