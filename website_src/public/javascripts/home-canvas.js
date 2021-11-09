@@ -49,11 +49,11 @@ function draw_timer() {
     ctx.fillRect(c.width / 2 - 260, c.height / 2 - 150, 520, 200); 
     ctx.fillStyle='red';
     ctx.textAlign = "center"; 
-    ctx.fillText("GAMEJAM HAS ENDED!!!!!!", c.width / 2, (c.height / 2) - 80); 
+    ctx.fillText("Time until GAMEJAM ends:", c.width / 2, (c.height / 2) - 80); 
     ctx.fillStyle='hsl('+hue+',100%,50%)';
     ctx.textAlign = "center"
     ctx.font = "80px Squealer";
-    ctx.fillText("0d, 0h, 0m, 0s!", c.width / 2, c.height / 2); 
+    ctx.fillText(timer, c.width / 2, c.height / 2); 
 }
 
 function createRainbowColor() {   

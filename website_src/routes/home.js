@@ -4,17 +4,18 @@ var session = require('express-session');
 var sqlite3_lib = require('../resources/sqlite3.js').db
 var config = require("../config.json")
 
+var curUsers = {}
 /* GET home page. */
 router.get('/', function(req, res) {
   if(req.session.loggedin) {
     if(req.session.priviliges == 4) {
       if(req.query.admin == "0") {
-        res.render('home', { username : req.session.username, accepted : req.session.accepted});
+        res.render('home', { username : req.session.username, accepted : req.session.accepted, count_date: config.count_date});
       } else {
         res.render('admin', { username : req.session.username, accepted : req.session.accepted});
       }
     } else {
-      res.render('home', { username : req.session.username, accepted : req.session.accepted});
+      res.render('home', { username : req.session.username, accepted : req.session.accepted, count_date: config.count_date});
     }
   } else {
     res.redirect('/login')
@@ -44,14 +45,14 @@ router.post('/', function(req, res, next) {
                 res.send(config.error_messages.too_long_message)
                 return
               }
-              sqlite3_lib.write(db, `UPDATE groups_data SET text = ?,title = ? WHERE id = ?;`, [req.body.motto_title,req.body.motto, acc_rows[0].id],function(err) {
-                if(err) {
+              sqlite3_lib.write(db, `UPDATE groups_data SET text = ?,title = ? WHERE id = ?;`, [req.body.motto,req.body.motto_title, acc_rows[0].id],function(err) {
+                if(err) {text
                   res.send(config.error_messages.sql_error_msg)
                   sqlite3_lib.close_conn(db)
                   return
 
                 }
-                res.send(config.success_messages.sql_success_msg)
+                res.render('home', { username : req.session.username, accepted : req.session.accepted, count_date: config.count_date});
                 sqlite3_lib.close_conn(db)
                 return
 

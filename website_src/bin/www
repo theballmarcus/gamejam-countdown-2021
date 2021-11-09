@@ -9,6 +9,8 @@ var debug = require('debug')('ping2save-server:server');
 var http = require('http');
 
 var config = require('../config.json'); // MAKE SURE TO KEEP THIS FILE A SECRET
+const WebSocket = require('ws');
+
 /**
  * Get port from environment and store in Express.
  */
@@ -16,11 +18,13 @@ var config = require('../config.json'); // MAKE SURE TO KEEP THIS FILE A SECRET
 var port = normalizePort(config.port);
 app.set('port', port);
 
+
 /**
  * Create HTTP server.
  */
 
 var server = http.createServer(app);
+
 
 /**
  * Listen on provided port, on all network interfaces.
