@@ -18,7 +18,7 @@ router.post('/', function(req, res, next) {
 
 quote = {}
 selectRandomQuote()
-setInterval(selectRandomQuote, 9000); 
+setInterval(selectRandomQuote, 500); 
 function selectRandomQuote() {
   sqlite3.open_conn('./data/gamejam_countdown.db', function(db, err) {
     sqlite3.query(db, 'SELECT * FROM groups_data WHERE accepted = 1;', [], function(data_rows, err1) {

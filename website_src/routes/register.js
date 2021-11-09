@@ -13,11 +13,11 @@ router.get('/', function(req, res, next) {
   }
 });
 
-debug_len = true;
+debug_len = false;
 router.post('/', function(req, res, next) {
   if(req.body.username && req.body.password && req.body.confirm_pass) {
     if(req.body.password == req.body.confirm_pass) {
-      if(!(req.body.password < 8 || !debug_len) || !(req.body.username < 4 || !debug_len)) {
+      if(req.body.password.length >= 8 && req.body.username.length > 3) {
         db = sqlite.open_conn('./data/gamejam_countdown.db', function(db, err) {
           if(err) {
             res.render('register', { status: 0, message : "DB connection failed? Ask an admin please." }); 

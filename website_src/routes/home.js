@@ -79,12 +79,6 @@ router.post('/', function(req, res, next) {
           });
         })
       })
-    } else if (req.body.direction) {
-      if(req.session.username in curUsers) {
-
-      } else {
-        curUsers[req.session.username] = {timeout : Date.now()}
-      }
     } else {
       res.send("Missing something?")
     }

@@ -6,6 +6,8 @@ module.exports.routers = {
         register : require('./routes/register'),
         home : require('./routes/home'),
         admin : require('./routes/admin'),
+	countdown :  require('./routes/countdown')
+
     },
     use : {
         index : "/",
@@ -13,7 +15,9 @@ module.exports.routers = {
         logout : "/logout",
         register : "/register",
         home : "/home",
-        admin : "/admin"
+        admin : "/admin",
+	countdown : "/countdown"
+
     }
 }
 
